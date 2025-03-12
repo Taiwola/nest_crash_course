@@ -20,7 +20,7 @@ import { Request } from 'express';
 export class BorrowBooksController {
   constructor(private readonly borrowBooksService: BorrowBooksService) {}
 
-  @Post('id')
+  @Post(':id')
   async create(
     @Body() createBorrowBookDto: CreateBorrowBookDto,
     @Param('id', ParseUUIDPipe) id: string,
